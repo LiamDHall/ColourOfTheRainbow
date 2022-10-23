@@ -70,18 +70,20 @@ namespace ColourOfTheRainbow
                 return;
             }
 
-            string colourCode = returnType.ToUpper() == "HEX" || (returnType.ToUpper() != "HEX" && returnType.ToUpper() != "RGB") ? rainbowColour.Hex : rainbowColour.RGB;
+            string colourCode = returnType.ToUpper() == "HEX" || (returnType.ToUpper() != "HEX" && returnType.ToUpper() != "RGB") ? rainbowColour.Hex : rainbowColour.RGB.Replace(" ", "");
 
-            if (colourCode == null)
+            if (colourCode == null || string.IsNullOrWhiteSpace(colourCode))
             {
-                _log.LogError("Colour Did Not Contain A {returnType} value", returnType);
+                _log.LogError("Colour Did Not Contain A {returnType} Value", returnType);
                 Console.WriteLine($"This colour has not been configured with {returnType} Value");
                 Console.WriteLine("This application will shutdown in 3 seconds");
                 Thread.Sleep(3000);
                 Environment.Exit(0);
                 return;
             }
-            _log.LogError("Application Successfully Return {returnType}: {colourCode} for {_input}", returnType, colourCode, _input );
+
+
+            _log.LogInformation("Application Successfully Return {returnType}: {colourCode} for {input}", returnType, colourCode, _input );
             Console.WriteLine(colourCode);
         }
 
