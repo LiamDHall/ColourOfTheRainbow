@@ -8,7 +8,7 @@ namespace ColourOfTheRainbow
     internal partial class Program
     {
         static void Main(string[] args)
-        {
+        {   
             ConfigurationBuilder builder = new ConfigurationBuilder();
             BuildConfigeration(builder);
 

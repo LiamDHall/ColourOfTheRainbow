@@ -8,8 +8,8 @@ namespace ColourOfTheRainbow
     {
         private readonly IConfiguration _configuration;
         private readonly ILogger<ColourService> _log;
-        private string _input;
-        private IList<Colour> _colours;
+        public string Input;
+        public IList<Colour> Colours;
 
         public ColourService(ILogger<ColourService> log, IConfiguration configuration)
         {
@@ -17,9 +17,14 @@ namespace ColourOfTheRainbow
             _configuration = configuration;
         }
 
+        public ColourService()
+        {
+
+        }
+
         public void CheckInput(string[] args)
         {
-            if (args.Length == 0)
+            if (args.Length == 0 || string.IsNullOrWhiteSpace(args[0]))
             {
                 _log.LogError("No Arguments Passed");
                 Console.WriteLine("Please try again and provide a name of a colour in the rainbow.\nThis application will shutdown in 3 seconds");
@@ -46,21 +51,21 @@ namespace ColourOfTheRainbow
                 return;
             }
 
-            _input = args[0];
+            Input = args[0];
         }
 
         public void ProvideColourCode()
         {
             var returnType = _configuration.GetValue<string>("ReturnType") != null ? _configuration.GetValue<string>("ReturnType") : ""; 
 
-            Colour rainbowColour = _colours.FirstOrDefault(colour => colour.Name == _input);
+            Colour rainbowColour = Colours.FirstOrDefault(colour => colour.Name == Input);
             
             if (rainbowColour == null)
             {
                 _log.LogError("Colour Was Not Found In Dictionary");
                 Console.WriteLine("Colour Not Found. Only colours in the rainbow are accepted");
                 Console.WriteLine("For Exampled");
-                foreach (Colour colour in _colours)
+                foreach (Colour colour in Colours)
                 {
                     Console.WriteLine($"{colour.Name}");
                 }
@@ -83,7 +88,7 @@ namespace ColourOfTheRainbow
             }
 
 
-            _log.LogInformation("Application Successfully Return {returnType}: {colourCode} for {input}", returnType, colourCode, _input );
+            _log.LogInformation("Application Successfully Return {returnType}: {colourCode} for {input}", returnType, colourCode, Input );
             Console.WriteLine(colourCode);
         }
 
@@ -100,7 +105,7 @@ namespace ColourOfTheRainbow
                 return;
             }
             
-            _colours = coloursDict;
+            Colours = coloursDict;
         }
     }
 }

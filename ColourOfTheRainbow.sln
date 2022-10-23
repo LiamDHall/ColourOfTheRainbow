@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32505.173
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColourOfTheRainbow", "ColourOfTheRainbow\ColourOfTheRainbow.csproj", "{4EE6454B-659C-41F4-AA1E-6499D3ECC556}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ColourOfTheRainbow", "ColourOfTheRainbow\ColourOfTheRainbow.csproj", "{4EE6454B-659C-41F4-AA1E-6499D3ECC556}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColourOfTheRainbow.UnitTest", "ColourOfTheRainbow.UnitTest\ColourOfTheRainbow.UnitTest.csproj", "{C9ECC437-4EB9-4E23-929F-B98BB9ECD493}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{4EE6454B-659C-41F4-AA1E-6499D3ECC556}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4EE6454B-659C-41F4-AA1E-6499D3ECC556}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EE6454B-659C-41F4-AA1E-6499D3ECC556}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9ECC437-4EB9-4E23-929F-B98BB9ECD493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9ECC437-4EB9-4E23-929F-B98BB9ECD493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9ECC437-4EB9-4E23-929F-B98BB9ECD493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9ECC437-4EB9-4E23-929F-B98BB9ECD493}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
