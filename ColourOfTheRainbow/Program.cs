@@ -9,7 +9,6 @@ namespace ColourOfTheRainbow
     {
         static void Main(string[] args)
         {
-            args = new[] { "Red" };
             ConfigurationBuilder builder = new ConfigurationBuilder();
             BuildConfigeration(builder);
 
